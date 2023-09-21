@@ -21,9 +21,9 @@ class CurrencyConverterValidatorTestCase(TestCase):
         new_amount_2 = self.usecase.get_new_amount(test_source_2, test_target_2, test_amount_2)
         new_amount_3 = self.usecase.get_new_amount(test_source_3, test_target_3, test_amount_3)
 
-        self.assertEqual(new_amount_1, "$10000.00")
-        self.assertEqual(new_amount_2, "$36690.00")
-        self.assertEqual(new_amount_3, "$170496.53")
+        self.assertEqual(new_amount_1, "$10,000.00")
+        self.assertEqual(new_amount_2, "$36,690.00")
+        self.assertEqual(new_amount_3, "$170,496.53")
 
     def test_get_format_amount(self):
         test_amount_1 = "$100,000"
@@ -47,6 +47,6 @@ class CurrencyConverterValidatorTestCase(TestCase):
         new_amount_2 = self.usecase._CurrencyConverterUseCase__format_new_amount(test_amount_2)
         new_amount_3 = self.usecase._CurrencyConverterUseCase__format_new_amount(test_amount_3)
 
-        self.assertEqual(new_amount_1, "$100000.13")
+        self.assertEqual(new_amount_1, "$100,000.13")
         self.assertEqual(new_amount_2, "$100.00")
-        self.assertEqual(new_amount_3, "$12333.54")
+        self.assertEqual(new_amount_3, "$12,333.54")

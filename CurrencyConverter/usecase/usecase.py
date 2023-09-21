@@ -19,4 +19,4 @@ class CurrencyConverterUseCase:
         """格式化成規定格式"""
         accurate_amount = Decimal(str(new_amount))
         accurate_amount_after_round = accurate_amount.quantize(Decimal('0.00'), rounding=ROUND_HALF_UP)
-        return "${:.2f}".format(accurate_amount_after_round)
+        return f"${accurate_amount_after_round:,.2f}"
